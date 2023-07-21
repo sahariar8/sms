@@ -33,7 +33,7 @@ class DashboardController extends Controller
         $student->img = $folder.$imgName;
         $check = Student::where('roll',$request->roll )->where('class',$request->class)->first();
         if($check){
-            return back()->with('msg1','This Roll already exists');
+            return back()->with('msg1','This Roll already exists in this class');
         }else{
             $student->save();
          return back()->with('msg','Student Added Successfully');   
