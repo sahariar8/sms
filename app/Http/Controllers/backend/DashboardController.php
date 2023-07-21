@@ -4,15 +4,18 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use PhpParser\Node\Stmt\Return_;
 
 class DashboardController extends Controller
 {
     public function index(){
         $student = Student::count();
-        return view('backend.pages.dashboard',compact('student'));
+        $user = User::count();
+        return view('backend.pages.dashboard',compact('student','user'));
     }
+
     public function show(){
         return view('backend.pages.add_student');
     }
@@ -28,10 +31,17 @@ class DashboardController extends Controller
         $folder = 'backend/images/';
         $img->move($folder, $imgName);
         $student->img = $folder.$imgName;
+        $check = Student::where('roll',$request->roll )->where('class',$request->class)->first();
+        if($check){
+            return back()->with('msg1','This Roll already exists');
+        }else{
+            $student->save();
+         return back()->with('msg','Student Added Successfully');   
+        }
 
-        $student->save();
-        return back()->with('msg','Student Added Successfully');
-
+        
+       
+       
     }
 
     public function store(){
@@ -67,7 +77,5 @@ class DashboardController extends Controller
         $student->save();
         return back()->with('msg','Student Information Updated Successfully');
     }
-    public function user(){
-        return view('backend.pages.user');
-    }
+   
 }

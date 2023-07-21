@@ -58,7 +58,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                            
-                            <a class="nav-link collapsed" href="{{route('user')}}">
+                            <a class="nav-link collapsed" href="#">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-square-pen"></i></div>
                                Add User
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

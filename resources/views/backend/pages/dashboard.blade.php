@@ -20,9 +20,9 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
-                <div class="card-body"> <i class="fa-solid fa-user-lock" style="font-size: 72px"></i> <span style="float: right; font-size:28px;font-family:sans-serif">Total User</span></div>
+                <div class="card-body"> <i class="fa-solid fa-user-lock" style="font-size: 52px"></i> <span style="float: right; font-size:28px;font-family:sans-serif">Total User</span></div>
                 <div class="div">
-                    <h3 style="float:right; margin-right:90px; margin-top:-30px"></h3>
+                    <h3 style="float:right; margin-right:90px; margin-top:-20px">{{$user}}</h3>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="">View Details</a>

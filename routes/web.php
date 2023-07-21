@@ -30,5 +30,5 @@ Route::middleware([
     Route::get('/destroy/{id}/students',[DashboardController::class,'destroy'])->name('student.destroy');
     Route::get('/edit/{id}/students',[DashboardController::class,'edit'])->name('student.edit');
     Route::post('/update/{id}/students',[DashboardController::class,'update'])->name('student.update');
-    Route::get('/user',[DashboardController::class,'user'])->name('user');
+    
 });

@@ -9,16 +9,17 @@
                 @csrf
                 <div class="form-group">
                   <label for="name"><b>Name:</b></label>
-                  <input type="text" class="form-control mb-3" name="name">
+                  <input type="text" class="form-control mb-3" name="name" required>
                 </div>
                 <div class="form-group">
                   <label for="roll"><b>Roll:</b></label>
-                  <input type="text" class="form-control mb-3"placeholder="Enter roll ( 6 digit )"  pattern="[0-9]{6}" name="roll">
+                  <h3 class="text-center text-danger">{{Session::get('msg1')}}</h3>
+                  <input type="text" class="form-control mb-3"placeholder="Enter roll ( 6 digit )"  pattern="[0-9]{6}" name="roll" required>
                 </div>
                 <div class="form-group">
                   <label for="class"><b>Class:</b></label>
                   {{-- <input type="text" class="form-control mb-3" pattern="[0-9]" name="class"> --}}
-                  <select name="class" id="class" class="form-control">
+                  <select name="class" id="class" class="form-control" required>
                     <option value="">Select</option>
                     <option value="1">Class-1</option>
                     <option value="2">Class-2</option>
@@ -29,15 +30,15 @@
                 </div>
                 <div class="form-group">
                   <label for="city"><b>City:</b></label>
-                  <input type="text" class="form-control mb-3" name="city">
+                  <input type="text" class="form-control mb-3" name="city" required>
                 </div>
                 <div class="form-group">
                   <label for="contact"><b>Contact:</b></label>
-                  <input type="text" class="form-control mb-3"placeholder="Enter Mobile Number"  pattern="[0-9]{11}" name="contact">
+                  <input type="text" class="form-control mb-3"placeholder="Enter Mobile Number"  pattern="[0-9]{11}" name="contact" required>
                 </div>
                 <div class="form-group">
                   <label for="img"><b>Image</b></label>
-                  <input type="file" class="form-control mb-3" name="img">
+                  <input type="file" class="form-control mb-3" name="img" required>
                 </div>
                 <button type="submit" class="btn text-light" style="background-color: #428bca;">Submit</button>
               </form>
